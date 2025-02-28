@@ -1,0 +1,269 @@
+.great-vibes-regular {
+  font-family: "Great Vibes", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.huias {
+  height: 2000px;
+  background-color: aqua;
+  <div class="huias"></div>
+}
+
+
+:root {
+  margin: 0;
+  padding: 0;
+  --font-size-h1: 35px;
+  --font-size-h2: 25px;
+  --font-size-h3: 15px;
+  --font-size-h4: 10px;
+  --font-size-count-day-hour: 100px;
+  --font-size-day-hour: 50px;
+  --colorDark1: #5a5f49;
+  --colorDark2: #929783;
+  --colorMidle: #c8a693;
+  --colorLite1: #efd1cc;
+  --colorLite2: #ede1dd;
+}
+
+h2 {
+  font-size: 2.5vw;
+}
+
+*{margin: 0;
+  padding: 0;
+  box-sizing: border-box;}
+
+body {
+   font-family: 'Great Vibes', cursive;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   background-color: var(--colorLite2);
+   
+    
+}
+
+header {
+  
+  position: sticky;
+  top: 0;
+
+}
+
+nav {
+    background-color: var(--colorLite1);
+    
+    
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 2000px;
+    list-style-type: none;
+    font-size: var(--font-size-h2);
+    margin: auto;
+    align-items: center;
+    height: 60px;
+    text-align: center;
+}
+
+.menu {}
+
+.logo-container img {
+   padding-top: 10px;
+   height: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--colorDark1);    
+}
+
+html {
+  scroll-behavior: smooth;
+}
+h2 {
+  scroll-margin-top: 80px;
+}
+h1:target {
+  color: var(--colorLite1)
+}
+
+
+.headerBanner {
+  background-color: var(--colorLite1);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.leftPartBanner {
+  width: 35vw;
+  height: 40vw;
+  background-color: var(--colorLite1);
+  margin-right: 0;
+  margin-left: 15vw;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.forCentrText {
+  width: 20vw;
+  height: 20vw;
+  display: flex;
+  flex-direction:column;
+  align-items:center
+}
+
+.rightPartBanner {
+  width: 50vw;
+  height: 40vw;
+  background-image: url("../img/ВерониКолёк.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 0;
+} 
+
+.h2__dark {
+  color: var(--colorDark1);
+  font-weight: inherit;
+}
+.h2__light {
+  color: var(--colorDark2);
+  font-weight: inherit;
+}
+
+.names {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%; 
+}
+
+
+.V {
+  margin-top: 1vw;
+  margin-right: 1vw;
+
+}
+.Kah {
+  position:relative;     
+}
+.data__palace {
+  position:relative; 
+  white-space: nowrap;
+}
+/* основной блок */
+.container {
+  margin: 0 auto;
+  max-width: 1800px;
+  width: ;
+}
+
+.forCentrContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.titleOfBloks {
+  text-align: center;
+  margin: 40px 0 20px;
+
+}
+
+.dayPlan {
+  background-color: aqua;
+}
+.containerOfDayPlan {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-auto-rows: 300px;
+  /* grid-template-rows: repeat(auto-fill, 300px); */
+  gap: 5vw;
+}
+
+.containerOfDayPlan div:nth-child(2n-1) {
+  background-color: red;
+}
+
+.containerOfDayPlan div:nth-child(2n) {
+  display: flex;
+  align-items: center;
+}
+
+.dayPlan img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* таймер */
+
+.calendar {
+  display: flex;
+  justify-content: space-evenly;
+  width: 800px;
+  height: 500px;
+
+}
+
+.day_hour_calendar {
+  background-image: url("../img/calendar/before.svg");
+  width: 350px;
+  height: 500px;
+  background-size: 350px 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 30px;
+}
+
+.clock{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: beige;
+  width: 500px;
+  height: 500px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+ 
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+}
+ 
+.countdown-item span {
+  display: block;  
+}
+
+
+.count_day_hour {
+  font-size: var(--font-size-count-day-hour);
+  color: var(--colorDark1)
+}
+.day_hour {
+  font-size: var(--font-size-day-hour);
+}
+
+.count_min_sec {
+  font-size: var(--font-size-count-day-hour);
+  color: var(--colorDark1)
+}
+.min_sec {
+  font-size: var(--font-size-day-hour);
+}
