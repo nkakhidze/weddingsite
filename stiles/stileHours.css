@@ -1,0 +1,74 @@
+/* 1) Сначала заставляем родительский контейнер для часов быть «контекстом позиционирования» */
+.reveal-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2) Это сама «маска» (будет рисовать изображение after.svg справа налево) */
+.reveal-mask {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0;            /* по умолчанию «скрыта» */
+  height: 99%;
+
+  background: url("../img/calendar/after.svg") no-repeat right center;
+  background-size: cover;
+  transition: width 3s ease-out; /* анимация «разворачивания» */
+  pointer-events: none; /* чтобы мышью не блокировать */
+  z-index: 5;           /* чуть выше содержимого родителя, но ниже других overlay, если нужно */
+}
+
+/* 3) Когда мы добавляем .active, ширина увеличивается до 100% */
+.reveal-mask.active {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------гиф холодильник--------------------- */
+
+
+.reveal-mask-gif {
+  position: absolute;
+  top: 16%;
+  left: 12%;
+
+
+  /* 
+     Сделаем ширину и высоту «100%», 
+     чтобы гиф точно перекрывала весь блок «Дней» 
+  */
+  width: 80%;
+  height: 70%;
+
+
+  /* Сразу скрываем в обычном состоянии */
+  opacity: 0;
+  pointer-events: none;
+
+  /* Чтобы гиф был по центру блока, мы можем сделать фоновое изображение */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 95%;
+  /* Или, если вам удобнее, можно вставлять <img> внутрь этого div-а, но нагляднее будет фон */
+  /* Пример: background-image: url("../img/calendar/open-fridge.gif"); */
+ 
+  
+  /* Плавного перехода, собственно, не нужно — мы хотим ровно «показали и сразу спрятали» */
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10; /* Поверх всего содержимого родителя, но может быть меньше, чем другие overlay */
+}
+
+/* При установке класса .active мы делаем opacity: 1 (видимо, гифка за 0.2s «вспыхнёт») */
+.reveal-mask-gif.active {
+  opacity: 1;
+}

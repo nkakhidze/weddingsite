@@ -1,0 +1,190 @@
+@media (min-width: 1315px)  {
+    .containerOfMap {
+    width: 95%;
+    height: 800px;
+  }
+  
+  .containerOfMap iframe {
+    width: 100%;        /* iframe растягивается на всю ширину родительского контейнера */
+    max-width: 800px;   /* но не больше 800px */
+    height: 800px;      /* фиксированная высота */
+    display: block;     /* чтобы убрать возможные пробелы вокруг inline-элементов */
+    margin: 0 auto;     /* центрирование, если родитель больше */
+  }
+     
+  .mapMagic{
+    top: -28px;
+    width: 260px;
+    max-width: 376px;
+    height: auto;
+    left: 596px;
+  }
+  .forMapHint{
+    position: absolute;
+    height: 34px;
+    top: 50px;
+    width: 216px;
+    font-size: 22px;
+    left: 620px;
+  }
+
+  #sliderCaption {
+    margin-top: 16px;
+    max-width: 85%;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.4;
+    text-align: center;
+    white-space: pre-wrap;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+}
+
+@media (max-width: 1314px) and (min-width: 769px)  {
+    .containerOfMap {
+        width: 95%;
+    }
+      .mapMagic{
+    top: -28px;
+    width: 234px;
+    max-width: 234px;
+    height: auto;
+    left: 300px;
+  }
+
+  .containerOfMap iframe {
+    width: 100%;        /* iframe растягивается на всю ширину родительского контейнера */
+    max-width: 600px;   /* но не больше 800px */
+    height: 600px;      /* фиксированная высота */
+    display: block;     /* чтобы убрать возможные пробелы вокруг inline-элементов */
+    margin: 0 auto;     /* центрирование, если родитель больше */
+  }
+  .forMapHint{
+    position: absolute;
+    height: 50px;
+    top: 43px;
+    width: 200px;
+    font-size: 21px;
+    left: 315px;
+}
+  #sliderCaption {
+  margin-top: 16px;
+  max-width: 85%;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+  white-space: pre-wrap;
+  font-family: "Montserrat Alternates", sans-serif;
+  z-index: 1000;
+}
+}
+
+
+@media (max-width: 768px) {
+      .containerOfMap {
+    width: 95%;
+  }
+  .containerOfMap iframe {
+    width: 90%;  
+    max-width: 400px;   
+    height: 400px;      
+    display: block;     
+    margin: 0 auto;     
+  }
+    .mapMagic{
+  top: 0;
+  width: 150px;
+  max-width: 150px;
+  left: 0px;
+}
+.forMapHint{
+    position: absolute;
+    height: 34px;
+    top: 40px;
+    width: 200px;
+    font-size: 21px;
+    left: -28px;
+}
+#sliderCaption {
+  margin-top: 16px;
+  max-width: 85%;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+  white-space: pre-wrap;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+}
+
+.containerOfMap {
+  position: relative;
+  height: auto;
+}
+.mapMagic{
+  position: absolute;
+}
+
+/* обёртка для мини-изображения */
+.map-wrapper {
+  position: absolute;
+  top: 0;
+  left: 208px;
+}
+
+/* подсказка под ним */
+.mapHint {
+  display: block;
+  background-color: #fff;
+  margin-top: 4px;
+  color: black;
+  text-align: center;
+  user-select: none;
+  pointer-events: none;
+}
+.mapHint.hidden {
+  display: none;
+}
+
+/* === стили для оверлея-лайтбокса === */
+#sliderOverlay {
+  position: fixed;
+  z-index: 10000;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#sliderOverlay img {
+  max-width: 66%;
+  max-height: 80%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.mapLinkWrapper {
+  /* если нужно отступить от фрейма */
+  margin: 8px 0;
+  text-align: center;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.mapLinkWrapper a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.mapLinkWrapper a:hover {
+  text-decoration: underline;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.containerOfMap a {
+    font-family: "Montserrat Alternates", sans-serif;
+    color: #1e90ff;
+}

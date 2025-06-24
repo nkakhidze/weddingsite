@@ -1,8 +1,527 @@
-.great-vibes-regular {
-  font-family: "Great Vibes", serif;
-  font-weight: 400;
-  font-style: normal;
+/* * {
+  outline: 1px solid rgba(255,0,0,0.3);
+} */
+
+#mobile-menu-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;  /* скрываем по умолчанию */
 }
+
+:root {
+  margin: 0;
+  padding: 0;
+  --font-size-h1: 35px;
+  --font-size-h2: 28px;
+  --font-size-h3: 15px;
+  --font-size-h4: 10px;
+  --font-size-count-day-hour: 100px;
+  --font-size-count-day-hour-small: 80px;
+  --font-size-day-hour: 50px;
+  --font-size-day-hour-small: 40px;
+  --colorDark1: #544E38;
+  --colorDark2: #68693F;
+  --colorMidle: #A19173;
+  --colorLite1: #a8b79c;
+  --colorLite2: #F5F4F2;
+}
+
+@font-face {
+  font-family: "Great Vibes";
+  src: url("/fonts/Great_Vibes/GreatVibes-Regular.ttf");
+}
+@font-face {
+  font-family: "MOSCOW2024";
+  src: url("/fonts/MOSCOW2024/MOSCOW2024.otf");
+}
+
+@media (min-width: 1315px)  {
+  .container {
+    margin: 0 auto;
+    max-width: 1800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  .names {
+    width: 100%;
+    max-width: 350px;
+  }
+  .names .V {
+    text-align: left;
+    width: 100%;
+    max-width: 80px;
+  }
+  .headerBanner {
+      align-items: stretch;
+  }
+  .forCentrText {
+    max-width: 470px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center; 
+    padding: 20px;
+    position: relative;
+  } 
+  .startLeftGolub {
+    position: absolute;
+    width: 349px;
+    top: 204px;
+    left: -210px;
+  }
+  .startRings {
+    position: absolute;
+    width: 300px;
+    top: 333px;
+    left: 90px;
+  }
+  .startRightGolub {
+    position: absolute;
+    width: 330px;
+    top: 251px;
+    left: 302px;
+  }
+
+  .V {
+    margin-top: -1vw;
+    margin-left: 175px;
+  }
+  .N {
+    margin-left: 25px;
+  }
+  .leftPartBanner, .rightPartBanner {
+      width: 100%;
+      height: auto;
+  }
+  .containerOfDayPlan {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    gap: 4vw;
+  }
+  .dayPlan img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  #restik {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+   }
+  .textRestoran {
+    width: 100%;
+  }
+
+  #kallajStrong {
+    margin-top: 45px;
+    max-width: 85%;
+  }
+
+  
+  .containerOfDayPlan div:nth-child(2n) {
+    display: flex;
+    align-items: center;
+  }
+  .dayPlanForText {
+    position: relative;
+  }
+
+}
+
+@media (max-width: 1314px) and (min-width: 769px)  {
+  .headerBanner {
+      flex-direction: column;
+      align-items: stretch;
+  }
+  .forCentrText {
+  max-width: 470px;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center; 
+  padding: 20px;
+  position: relative;
+  } 
+  .startLeftGolub {
+    position: absolute;
+    width: 230px;
+    top: 103px;
+    left: -43px;
+  }
+  .startRings {
+    position: absolute;
+    width: 213px;
+    top: 260px;
+    left: 149px;
+  }
+  .startRightGolub {
+    position: absolute;
+      width: 190px;
+      top: 155px;
+      left: 312px;
+  }
+
+  .V {
+    margin-top: -1vw;
+    margin-left: 65px;
+  }
+  .leftPartBanner, .rightPartBanner {
+      width: 100%;
+      max-height: 600px;
+  }
+  .containerOfDayPlan {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+  }
+
+  #restik {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 349px;
+   }
+  .textRestoran {
+    width: 100%;
+  }
+
+  #kallajStrong {
+    margin-top: -45px;
+  }
+
+  .dayPlanForText {
+    position: relative;
+  }
+  
+  
+  .containerOfDayPlan div:nth-child(2n) {
+    display: flex;
+    align-items: center;
+    margin-bottom:50px;
+    margin-top: 10px;
+  }
+  .dayPlan img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+
+  .countdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .menu {
+    width: 300px;
+    max-width: 100%;
+    background-color: var(--colorMidle);
+  }
+  #mobile-menu-button {
+    display: block;
+    position: absolute; /* можно прокинуть его вправо сверху */
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+
+  /* Скрываем меню по умолчанию */
+  #mobile-menu {
+    display: none;               /* прячем */
+    flex-direction: column;      /* столбцом */
+    position: absolute;          /* чтобы фон можно было растянуть */
+    top: 100%;                   /* сразу под шапкой */
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background-color: var(--colorLite1);  /* ТУТ задаём фон */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 100;                /* поверх всего */
+  }
+
+  /* Когда у `#mobile-menu` есть класс `.open`, показываем его */
+  #mobile-menu.open {
+    display: flex;
+  }
+
+  /* Подправим пункты меню под мобилку */
+  #mobile-menu li {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+  }
+  #mobile-menu li:last-child {
+    border-bottom: none;
+  }
+  .headerBanner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .names {
+    width: 100%;
+    max-width: 150px;
+  }
+  .names .V {
+    text-align: right;
+  }
+  .forCentrText {
+  max-width: 286px;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center; 
+  padding: 20px;
+  padding-bottom: 130px;
+  position: relative;
+  } 
+  .startLeftGolub {
+    position: absolute;
+    width: 195px;
+        height: auto;
+        top: 194px;
+        left: -84px;
+  }
+  .startRings {
+    position: absolute;
+            width: 175px;
+        top: 282px;
+        left: 64px;
+  }
+  .startRightGolub {
+    position: absolute;
+    width: 186px;
+        top: 219px;
+        left: 173px;
+  }
+  .V {
+    margin-top: -1vw;
+    margin-left: 65px;
+
+  }
+  .leftPartBanner, .rightPartBanner {
+      width: 100%;
+      max-height: 600px;
+  }
+  .containerOfDayPlan {
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction:column;
+  }
+  .leftPartBanner {
+    width: 100%;
+    height: 400px;
+  }
+  /* .container .forCentrContent .containerOfDayPlan {
+    width: 700px;
+  } */
+  #restik {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 349px;
+    margin-bottom: -47px;
+   }
+  .textRestoran {
+    width: 100%;
+  }
+
+
+
+  .container .forCentrContent .kallaj-wrapper {
+    width: 80% !important; /* «окно просмотра» */
+    height: 500px !important;
+    overflow: auto !important;  
+    margin-top: -40px;
+  }
+  .forCentrContent .kallaj-wrapper .kallajStrong {
+    /* оставляем оригинальный размер картинки,
+       чтобы внутри скроллилось */
+    width: 1600px !important;    /* картинка вдвое шире — появится скролл и всё будет «мелко» */
+    height: auto !important;
+  }
+
+  .dayPlanForText {
+    position: relative;
+  }
+  
+  .containerOfDayPlan div:nth-child(2n) {
+    display: flex;
+    align-items: center;
+    margin-bottom:50px;
+    margin-top:10px;
+  }
+  .dayPlan img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+
+  .countdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  .countdown .calendar {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+  }
+  .calendar .day_hour_calendar {
+    background-image: url("../img/calendar/before.svg");
+    width: 80%;
+    max-width: 350px;
+    height: 300px;
+    background-size: 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 30px;
+  }
+
+  .countdown-item .butonerka {
+    position: absolute;
+    width: 82px;
+    top: 13px;
+    left: 1px;
+    z-index: 999;
+  }
+  .countdown-item .bucket {
+    position: absolute;
+    width: 74px;
+    top: 20px;
+    left: 1px;
+    rotate: 24deg;
+    z-index: 999;
+  }
+
+  #CountdownSjat {
+    width: 80%;
+
+  }
+
+  .countdown-item {
+    position: relative; 
+  }
+
+  /*--------------- декор------------------- */
+
+  #left-hand-heart {
+    position: absolute;
+    top: 67px;
+    left: -51px;
+    transform: translate(-50%, -50%);
+    width: 165px;
+    height: auto;
+    z-index: 10;
+    rotate: 33deg;
+  }
+  #right-hand-heart {
+    position: absolute;
+    top: 237px;
+    left: 260px;
+    transform: translate(-50%, -50%);
+    width: 113px;
+    height: auto;
+    z-index: 10;
+    rotate: 35deg;
+  }
+  .containerOfDayPlan .dayPlan .dekorRings {
+    position: absolute;
+    height: auto;
+    width: 90px;
+    top: -45px;
+    left: -23px;
+  }
+  .containerOfDayPlan .dayPlan .dekorPhotoaparat {
+    position: absolute;
+    height: auto;
+    width: 82px;
+    top: -30px;
+    left: 39px;
+  }
+  .containerOfDayPlan .dayPlan .dekorKhinkal {
+    position: absolute;
+    height: auto;
+    width: 155px;
+    top: -25px;
+    left: -17px;
+  }
+
+
+ /*--------------- декор------------------- */
+
+
+
+  .countdown .clock{
+    display: flex;
+    justify-content: space-evenly;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 71%;
+    max-width: 400px;
+    height: 234px;
+    position: relative;
+  }
+  .countdown .count_day_hour {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 68px;
+    color: var(--colorDark1)
+  }
+  .countdown .day_hour {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 28px;
+  }
+
+  .countdown .count_min_sec {
+    font-family: "MOSCOW2024";
+    font-size: 60px;
+    color: var(--colorDark1)
+  }
+  .countdown .min_sec {
+    font-family: "MOSCOW2024";
+    font-size: 25px;
+  }
+
+  .wrapper {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .slide .card {
+      width: 80%; /* или другие размеры, подходящие для мобильных */
+      margin: 0 auto;
+  }
+
+
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
 
 .huias {
   height: 2000px;
@@ -11,21 +530,7 @@
 }
 
 
-:root {
-  margin: 0;
-  padding: 0;
-  --font-size-h1: 35px;
-  --font-size-h2: 25px;
-  --font-size-h3: 15px;
-  --font-size-h4: 10px;
-  --font-size-count-day-hour: 100px;
-  --font-size-day-hour: 50px;
-  --colorDark1: #5a5f49;
-  --colorDark2: #929783;
-  --colorMidle: #c8a693;
-  --colorLite1: #efd1cc;
-  --colorLite2: #ede1dd;
-}
+
 
 h2 {
   font-size: 2.5vw;
@@ -41,14 +546,16 @@ body {
    padding: 0;
    position: relative;
    background-color: var(--colorLite2);
-   
-    
+   display: flex;
+   flex-direction: column;
+       
 }
 
 header {
   
   position: sticky;
   top: 0;
+  z-index: 999; 
 
 }
 
@@ -58,7 +565,7 @@ nav {
     
 }
 
-ul {
+ul.menu {
     display: flex;
     justify-content: space-evenly;
     max-width: 2000px;
@@ -68,13 +575,15 @@ ul {
     align-items: center;
     height: 60px;
     text-align: center;
+    gap: 20px;
+    transition: all 0.3s;
 }
 
-.menu {}
 
 .logo-container img {
-   padding-top: 10px;
-   height: 50px;
+  padding-top: 10px;
+  height: 40px;
+  max-width: 100%;
 }
 
 a {
@@ -95,38 +604,38 @@ h1:target {
 
 .headerBanner {
   background-color: var(--colorLite1);
+  width: 100%;
+  margin: 0 auto; 
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  justify-content: center; 
+  align-items: center;
 }
 
-.leftPartBanner {
-  width: 35vw;
-  height: 40vw;
+
+.leftPartBanner, .rightPartBanner {
+  width: 100%;
+  max-width: 600px;
+}
+
+ .leftPartBanner {
   background-color: var(--colorLite1);
   margin-right: 0;
-  margin-left: 15vw;
   display: flex;
   justify-content:center;
   align-items: center;
 }
 
-.forCentrText {
-  width: 20vw;
-  height: 20vw;
-  display: flex;
-  flex-direction:column;
-  align-items:center
-}
-
 .rightPartBanner {
-  width: 50vw;
-  height: 40vw;
+  height: 1050px;
   background-image: url("../img/ВерониКолёк.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: 0;
+  background-color: var(--colorLite1);
+  background-position: center;
 } 
+
+
 
 .h2__dark {
   color: var(--colorDark1);
@@ -137,18 +646,13 @@ h1:target {
   font-weight: inherit;
 }
 
-.names {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%; 
+h2 {
+  font-size: clamp(25px, 2.5vw, 40px);
 }
 
-
-.V {
-  margin-top: 1vw;
-  margin-right: 1vw;
-
+.names {
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .Kah {
   position:relative;     
@@ -159,9 +663,10 @@ h1:target {
 }
 /* основной блок */
 .container {
-  margin: 0 auto;
-  max-width: 1800px;
-  width: ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .forCentrContent{
@@ -178,33 +683,25 @@ h1:target {
 }
 
 .dayPlan {
-  background-color: aqua;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: large;
 }
-.containerOfDayPlan {
-  max-width: 1300px;
-  margin: 0 auto;
+
+
+/* .containerOfDayPlan {
   display: grid;
   grid-template-columns: 500px 500px;
-  grid-auto-rows: 300px;
-  /* grid-template-rows: repeat(auto-fill, 300px); */
   gap: 5vw;
-}
+} */
 
-.containerOfDayPlan div:nth-child(2n-1) {
-  background-color: red;
-}
 
-.containerOfDayPlan div:nth-child(2n) {
-  display: flex;
-  align-items: center;
-}
 
-.dayPlan img {
+/* .dayPlan img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
+} */
 
 /* таймер */
 
@@ -213,7 +710,57 @@ h1:target {
   justify-content: space-evenly;
   width: 800px;
   height: 500px;
+}
 
+.foto_wedding, .foto_foto, .foto_restaurant {
+  position: relative;
+}
+
+.dayPlan .dekorRings {
+  position: absolute;
+  height: auto;
+  width: 157px;
+  top: -53px;
+  left: -58px;
+}
+.dayPlan .dekorPhotoaparat {
+  position: absolute;
+  height: auto;
+  width: 143px;
+  top: -68px;
+  left: 57px;
+  }
+.dayPlan .dekorKhinkal {
+  position: absolute;
+  height: auto;
+  width: 333px;
+  top: -46px;
+  left: -105px;
+}
+
+.kallaj-wrapper .kallajStrong {
+  display: block;
+  width: 90% !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 auto;
+}
+
+/* По умолчанию (десктоп) — картинка резиновая, 
+   обёртка ничем себя не выдаёт */
+.kallaj-wrapper {
+  display: block;
+}
+.kallaj-wrapper .kallajStrong {
+  max-width: 100%;
+  height: auto;
+}
+
+.link2gis {
+  display: block;
+  width: auto;
+  text-align: center;
+  margin: 10px;
 }
 
 .day_hour_calendar {
@@ -229,9 +776,33 @@ h1:target {
 .clock{
   display: flex;
   justify-content: space-evenly;
-  background-color: beige;
+  background-image: url("../img/calendar/digital-clock.svg");
+  background-position: center;
+  background-repeat: no-repeat;
   width: 500px;
   height: 500px;
+  position: relative;
+}
+.left-hand-heart {
+  position: absolute;
+  top: 27%;
+  left: -14%;
+  transform: translate(-50%, -50%);
+  width: 198px;
+  height: auto;
+  z-index: -1;
+  rotate: 45deg;
+}
+
+.right-hand-heart {
+  position: absolute;
+  top: 91%;
+  left: 96%;
+  transform: translate(-50%, -50%);
+  width: 163px;
+  height: auto;
+  z-index: 10;
+  rotate: 37deg;
 }
 
 .countdown {
@@ -245,7 +816,24 @@ h1:target {
   flex-direction: column;
   align-items:center;
   justify-content:center;
+  position: relative;
 }
+
+.butonerka {
+    position: absolute;
+    width: 178px;
+    top: -20px;
+    left: -12px;
+    z-index: 999;
+  }
+  .bucket {
+    position: absolute;
+    width: 191px;
+    top: -17px;
+    left: -34px;
+    rotate: 24deg;
+    z-index: 999;
+  }
  
 .countdown-item span {
   display: block;  
@@ -253,17 +841,56 @@ h1:target {
 
 
 .count_day_hour {
+  font-family: "Montserrat Alternates", sans-serif;
   font-size: var(--font-size-count-day-hour);
   color: var(--colorDark1)
 }
 .day_hour {
+  font-family: "Montserrat Alternates", sans-serif;
   font-size: var(--font-size-day-hour);
 }
 
 .count_min_sec {
+  font-family: "MOSCOW2024";
   font-size: var(--font-size-count-day-hour);
   color: var(--colorDark1)
 }
 .min_sec {
+  font-family: "MOSCOW2024";
   font-size: var(--font-size-day-hour);
+}
+
+
+.startLeftGolub:hover {
+  rotate: 10deg;
+
+}
+
+.startRightGolub:hover {
+  rotate: -10deg;
+}
+
+.startRings:hover {
+  rotate: 10deg;
+}
+
+.dekorRings:hover{
+  rotate: 25deg
+}
+
+.dekorPhotoaparat:hover{
+  rotate: 15deg
+}
+
+
+.dekorKhinkal:hover{
+  rotate: 15deg
+}
+
+.bucket:hover{
+  rotate: 10deg
+}
+    
+.butonerka:hover{
+  rotate: 20deg
 }
