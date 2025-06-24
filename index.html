@@ -2,15 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>12.07.25 ❤️</title>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');</style>
+    <link rel="stylesheet" href="./stiles/reset.css">
     <link rel="stylesheet" href="stiles/stileMain.css" type="text/css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap');</style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stiles/stileHours.css">
+    <link rel="stylesheet" href="stiles/stileMapMagic.css">
     <link rel="stylesheet" href="stiles/stileForSlider.css">
+    <link rel="stylesheet" href="stiles/stileWaitYou.css">
 </head>
 <body>
     <a name="top"></a>
@@ -30,17 +29,25 @@
                     <h2 class="h2__dark">12 июля 2025    15:20</h2>
                     <h2 class="palace h2__light">Дворец бракосочетаний </h2>
                 </div>
+                <img src="img/dekor/startLeftGolub.png" class="startLeftGolub">
+                <img src="img/dekor/startRings.png" class="startRings">
+                <img src="img/dekor/startRightGolub.png" class="startRightGolub">
             </div>
         </div>
         <div class="rightPartBanner"></div>
     </section>
     <header>
         <nav>
-            <ul class="menu">
+             <button id="mobile-menu-button" aria-label="Открыть/закрыть меню">
+                ☰
+            </button>
+            <ul class="menu" id="mobile-menu">
                 <li><a href="#dayPlan">План дня</a></li>
                 <li><a href="#eventMap">Карта событий</a></li>
                 <li><a href="#top"><div class="logo-container"><img src="img/logoRings.png"></div></a></li>
+                <li><a href="#day2">День 2</a></li>
                 <li><a href="#Countdown">Обратный отсчёт</a></li>
+                <li><a href="#LittleUs">Чуть нас</a></li>
                 <li><a href="#waitYou">Ждём вас</a></li>
             </ul>
         </nav>
@@ -49,33 +56,88 @@
         <section class="forCentrContent">
             <h2 class="titleOfBloks h2__dark" id="dayPlan">План дня</h2>
             <div class="containerOfDayPlan">
-                <div class="dayPlan foto_wedding"><img src="img/dayPlan/1.1.jpg" alt="бракосочетание"></div>
-                <div class="dayPlan">15:20 <br>Бракосочетание</div>
-                <div class="dayPlan foto_foto"><img src="img/dayPlan/2.0.jpg" alt="фотосессия"></div>
-                <div class="dayPlan">16:00–18:00 <br>Фотосессия в Томске и на природе<br> Передвижение по локациям на автобусе</div>
-                <div class="dayPlan foto_restaurant"><img src="img/dayPlan/3.jpg" alt="ресторан"></div>
-                <div class="dayPlan">18:00 <br> Празднование в ресторане Кедр 18:00 </div>
-            </div>              
+                <div class="dayPlan foto_wedding">
+                    <img src="img/dekor/rings.png" class='dekorRings' alt="бракосочетание">
+                    <img src="img/dayPlan/1.1.jpg" alt="бракосочетание">
+                </div>
+                <div class="dayPlan dayPlanForText">
+                    15:20 <br> Церемония во Дворце бракосочетаний г. Томска на Ленина
+
+                </div>
+
+                <div class="dayPlan foto_foto">
+                    <img src="img/dekor/photoapparat.png" class="dekorPhotoaparat" alt="фотосессия">
+                    <img src="img/dayPlan/2.0.jpg" alt="фотосессия">
+                </div>
+                <div class="dayPlan dayPlanForText">16:00 <br> Общая памятная фотография, и дружно на автобусе едем до ресторана "Кедр" </div>
+
+                <div class="dayPlan foto_restaurant">
+                    <img src="img/dekor/khinkal.png"  class="dekorKhinkal" alt="ресторан">
+                    <img src="img/dayPlan/3.jpg" alt="ресторан">
+                </div>
+                <div class="dayPlan dayPlanForText">
+                    <div class="textRestoran">16:00–16:20 <br> В ресторане <a href="https://go.2gis.com/CYBtL" target="_blank" rel="noopener">"Кедр"</a> будет веселье, задор, громкий смех, и как показывает практика, 
+                        ручьи слёз :) </div>           
+                </div>
+            </div> 
+            <div class="kallaj-wrapper">
+                <img
+                    src="img/dekor/kallajStrong.jpg"
+                    class="kallajStrong"
+                    id="kallajStrong"
+                    alt="коллаж плана дня"
+                >
+            </div>
         </section>
         <section class="forCentrContent">
             <h2 class="titleOfBloks h2__dark" id="eventMap">Карта событий</h2>
             <div class="containerOfMap">
-                <iframe id="map_598696155" frameborder="0" width="800px" height="800px" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe><script type="text/javascript">(function(e,t){var r=document.getElementById(e);r.contentWindow.document.open(),r.contentWindow.document.write(atob(t)),r.contentWindow.document.close()})("map_598696155", "PGJvZHk+PHN0eWxlPgogICAgICAgIGh0bWwsIGJvZHkgewogICAgICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgfQogICAgICAgIGh0bWwsIGJvZHksICNtYXAgewogICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgIH0KICAgICAgICAuYnVsbGV0LW1hcmtlciB7CiAgICAgICAgICAgIHdpZHRoOiAyMHB4OwogICAgICAgICAgICBoZWlnaHQ6IDIwcHg7CiAgICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7CiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7CiAgICAgICAgICAgIGJveC1zaGFkb3c6IDAgMXB4IDNweCAwIHJnYmEoMCwgMCwgMCwgMC4yKTsKICAgICAgICAgICAgYm9yZGVyOiA0cHggc29saWQgIzAyODFmMjsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlOwogICAgICAgIH0KICAgICAgICAucGVybWFuZW50LXRvb2x0aXAgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiBub25lOwogICAgICAgICAgICBib3gtc2hhZG93OiBub25lOwogICAgICAgICAgICBib3JkZXI6IG5vbmU7CiAgICAgICAgICAgIHBhZGRpbmc6IDZweCAxMnB4OwogICAgICAgICAgICBjb2xvcjogIzI2MjYyNjsKICAgICAgICB9CiAgICAgICAgLnBlcm1hbmVudC10b29sdGlwOmJlZm9yZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IG5vbmU7CiAgICAgICAgfQogICAgICAgIC5kZy1wb3B1cF9oaWRkZW5fdHJ1ZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrOwogICAgICAgIH0KICAgICAgICAubGVhZmxldC1jb250YWluZXIgLmxlYWZsZXQtcG9wdXAgLmxlYWZsZXQtcG9wdXAtY2xvc2UtYnV0dG9uIHsKICAgICAgICAgICAgdG9wOiAwOwogICAgICAgICAgICByaWdodDogMDsKICAgICAgICAgICAgd2lkdGg6IDIwcHg7CiAgICAgICAgICAgIGhlaWdodDogMjBweDsKICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4OwogICAgICAgICAgICBsaW5lLWhlaWdodDogMTsKICAgICAgICB9CiAgICA8L3N0eWxlPjxkaXYgaWQ9Im1hcCI+PC9kaXY+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iaHR0cHM6Ly9tYXBzLmFwaS4yZ2lzLnJ1LzIuMC9sb2FkZXIuanM/cGtnPWZ1bGwmYW1wO3NraW49bGlnaHQiPjwvc2NyaXB0PjxzY3JpcHQ+KGZ1bmN0aW9uKGUpe3ZhciB0PUpTT04ucGFyc2UoZSkscj10Lm9yZGVyZWRHZW9tZXRyaWVzLG49dC5tYXBQb3NpdGlvbixhPXQuaXNXaGVlbFpvb21FbmFibGVkO2Z1bmN0aW9uIG8oZSl7cmV0dXJuIGRlY29kZVVSSUNvbXBvbmVudChhdG9iKGUpLnNwbGl0KCIiKS5tYXAoZnVuY3Rpb24oZSl7cmV0dXJuIiUiKygiMDAiK2UuY2hhckNvZGVBdCgwKS50b1N0cmluZygxNikpLnNsaWNlKC0yKX0pLmpvaW4oIiIpKX1ERy50aGVuKGZ1bmN0aW9uKCl7dmFyIGU9REcubWFwKCJtYXAiLHtjZW50ZXI6W24ubGF0LG4ubG9uXSx6b29tOm4uem9vbSxzY3JvbGxXaGVlbFpvb206YSx6b29tQ29udHJvbDohYX0pO0RHLmdlb0pTT04ocix7c3R5bGU6ZnVuY3Rpb24oZSl7dmFyIHQscixuLGEsbztyZXR1cm57ZmlsbENvbG9yOm51bGw9PT0odD1lKXx8dm9pZCAwPT09dD92b2lkIDA6dC5wcm9wZXJ0aWVzLmZpbGxDb2xvcixmaWxsT3BhY2l0eTpudWxsPT09KHI9ZSl8fHZvaWQgMD09PXI/dm9pZCAwOnIucHJvcGVydGllcy5maWxsT3BhY2l0eSxjb2xvcjpudWxsPT09KG49ZSl8fHZvaWQgMD09PW4/dm9pZCAwOm4ucHJvcGVydGllcy5zdHJva2VDb2xvcix3ZWlnaHQ6bnVsbD09PShhPWUpfHx2b2lkIDA9PT1hP3ZvaWQgMDphLnByb3BlcnRpZXMuc3Ryb2tlV2lkdGgsb3BhY2l0eTpudWxsPT09KG89ZSl8fHZvaWQgMD09PW8/dm9pZCAwOm8ucHJvcGVydGllcy5zdHJva2VPcGFjaXR5fX0scG9pbnRUb0xheWVyOmZ1bmN0aW9uKGUsdCl7cmV0dXJuInJhZGl1cyJpbiBlLnByb3BlcnRpZXM/REcuY2lyY2xlKHQsZS5wcm9wZXJ0aWVzLnJhZGl1cyk6REcubWFya2VyKHQse2ljb246ZnVuY3Rpb24oZSl7cmV0dXJuIERHLmRpdkljb24oe2h0bWw6IjxkaXYgY2xhc3M9J2J1bGxldC1tYXJrZXInIHN0eWxlPSdib3JkZXItY29sb3I6ICIrZSsiOyc+PC9kaXY+IixjbGFzc05hbWU6Im92ZXJyaWRlLWRlZmF1bHQiLGljb25TaXplOlsyMCwyMF0saWNvbkFuY2hvcjpbMTAsMTBdfSl9KGUucHJvcGVydGllcy5jb2xvcil9KX0sb25FYWNoRmVhdHVyZTpmdW5jdGlvbihlLHQpe2UucHJvcGVydGllcy5kZXNjcmlwdGlvbiYmdC5iaW5kUG9wdXAobyhlLnByb3BlcnRpZXMuZGVzY3JpcHRpb24pLHtjbG9zZUJ1dHRvbjohMCxjbG9zZU9uRXNjYXBlS2V5OiEwfSksZS5wcm9wZXJ0aWVzLnRpdGxlJiZ0LmJpbmRUb29sdGlwKG8oZS5wcm9wZXJ0aWVzLnRpdGxlKSx7cGVybWFuZW50OiEwLG9wYWNpdHk6MSxjbGFzc05hbWU6InBlcm1hbmVudC10b29sdGlwIn0pfX0pLmFkZFRvKGUpfSl9KSgneyJvcmRlcmVkR2VvbWV0cmllcyI6W3sidHlwZSI6IkZlYXR1cmUiLCJwcm9wZXJ0aWVzIjp7ImRlc2NyaXB0aW9uIjoiUEhBKzBKdlF2dEM2MExEUmh0QzQwTGdnMFlUUXZ0R0MwTDdSZ2RDMTBZSFJnZEM0MExnOEwzQSsiLCJzdHJva2VDb2xvciI6IiM0ZGI3MjUiLCJzdHJva2VXaWR0aCI6Miwic3Ryb2tlT3BhY2l0eSI6MSwiZmlsbENvbG9yIjoiIzY1ZDYzOSIsImZpbGxPcGFjaXR5IjowLjUsInJhZGl1cyI6MTMwNy4wNzA1ODY3MzI1MjcsInpJbmRleCI6MX0sImdlb21ldHJ5Ijp7InR5cGUiOiJQb2ludCIsImNvb3JkaW5hdGVzIjpbODQuOTUyMTI2LDU2LjQ1OTI2Nl19LCJpZCI6MTYxOH0seyJ0eXBlIjoiRmVhdHVyZSIsInByb3BlcnRpZXMiOnsiZGVzY3JpcHRpb24iOiIiLCJzdHJva2VDb2xvciI6IiNiNzI1MzQiLCJzdHJva2VXaWR0aCI6Miwic3Ryb2tlT3BhY2l0eSI6MSwiekluZGV4IjoyfSwiZ2VvbWV0cnkiOnsidHlwZSI6IkxpbmVTdHJpbmciLCJjb29yZGluYXRlcyI6W1s4NC45NTAwNjYsNTYuNDc3NzU3XSxbODQuOTUxNzgyLDU2LjQ1OTkzXSxbODQuOTc1ODE1LDU2LjQ1NTM3N10sWzg0Ljk3ODU2MSw1Ni40NTI1MzFdLFs4NC45Nzg1NjEsNTYuNDQ5Njg1XSxbODQuOTc5NTkxLDU2LjQ0NjkzNF0sWzg0Ljk4NDA1NSw1Ni40NDMzOTldLFs4NC45ODY0NTgsNTYuNDQwNzE4XSxbODQuOTkwMDYzLDU2LjQzODYzMV0sWzg0Ljk5NDM1NCw1Ni40MzQ2NDVdLFs4NC45OTcxMDEsNTYuNDMyNTU3XSxbODQuOTk4MTMxLDU2LjQzMTIyOF0sWzg0Ljk5ODEzMSw1Ni40MjkzMjldLFs4NC45OTgxMzEsNTYuNDI2NzY2XSxbODQuOTk0MzU0LDU2LjQyNDI5OF0sWzg0Ljk4NDM5OCw1Ni40MjA0MDZdLFs4NC45ODA3OTMsNTYuNDE1ODQ4XSxbODQuOTgyODUzLDU2LjQxMjgwOV0sWzg0Ljk4MTEzNiw1Ni40MTExOTVdXX0sImlkIjoxODk3fSx7InR5cGUiOiJGZWF0dXJlIiwicHJvcGVydGllcyI6eyJ0aXRsZSI6IjBKZlFrTkNUMEtFPSIsImRlc2NyaXB0aW9uIjoiIiwiY29sb3IiOiIjMDI4MWYyIiwiekluZGV4IjoxMDAwMDAwMDAwfSwiZ2VvbWV0cnkiOnsidHlwZSI6IlBvaW50IiwiY29vcmRpbmF0ZXMiOls4NC45NTAyMjcsNTYuNDc3Nzg4XX0sImlkIjoxMjY2fSx7InR5cGUiOiJGZWF0dXJlIiwicHJvcGVydGllcyI6eyJjb2xvciI6IiMwMjgxZjIiLCJ0aXRsZSI6IjBKclF0ZEMwMFlBPSIsImRlc2NyaXB0aW9uIjoiIiwiekluZGV4IjoxMDAwMDAwMDAwfSwiZ2VvbWV0cnkiOnsidHlwZSI6IlBvaW50IiwiY29vcmRpbmF0ZXMiOls4NC45ODE1MjYsNTYuNDExMTM5XX0sImlkIjoxNjk1fV0sIm1hcFBvc2l0aW9uIjp7ImxhdCI6NTYuNDQ1NTEwMzM3MjYwMDk2LCJsb24iOjg0Ljk4MzE5NjI1ODU0NDkyLCJ6b29tIjoxM30sImlzV2hlZWxab29tRW5hYmxlZCI6dHJ1ZX0nKTwvc2NyaXB0PjxzY3JpcHQgYXN5bmM9IiIgdHlwZT0idGV4dC9qYXZhc2NyaXB0IiBzcmM9Imh0dHBzOi8vd3d3Lmdvb2dsZXRhZ21hbmFnZXIuY29tL2d0YWcvanM/aWQ9VUEtMTU4ODY2MTY4LTEiPjwvc2NyaXB0PjxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij4oZnVuY3Rpb24oZSl7ZnVuY3Rpb24gdCgpe2RhdGFMYXllci5wdXNoKGFyZ3VtZW50cyl9d2luZG93LmRhdGFMYXllcj13aW5kb3cuZGF0YUxheWVyfHxbXSx0KCJqcyIsbmV3IERhdGUpLHQoImNvbmZpZyIsZSksd2luZG93Lmd0YWc9dH0pKCdVQS0xNTg4NjYxNjgtMScpPC9zY3JpcHQ+PC9ib2R5Pg==")</script>
+                <iframe id="map_598696155" frameborder="0" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe><script type="text/javascript">(function(e,t){var r=document.getElementById(e);r.contentWindow.document.open(),r.contentWindow.document.write(atob(t)),r.contentWindow.document.close()})("map_598696155", "PGJvZHk+PHN0eWxlPgogICAgICAgIGh0bWwsIGJvZHkgewogICAgICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgfQogICAgICAgIGh0bWwsIGJvZHksICNtYXAgewogICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgIH0KICAgICAgICAuYnVsbGV0LW1hcmtlciB7CiAgICAgICAgICAgIHdpZHRoOiAyMHB4OwogICAgICAgICAgICBoZWlnaHQ6IDIwcHg7CiAgICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7CiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7CiAgICAgICAgICAgIGJveC1zaGFkb3c6IDAgMXB4IDNweCAwIHJnYmEoMCwgMCwgMCwgMC4yKTsKICAgICAgICAgICAgYm9yZGVyOiA0cHggc29saWQgIzAyODFmMjsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlOwogICAgICAgIH0KICAgICAgICAucGVybWFuZW50LXRvb2x0aXAgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiBub25lOwogICAgICAgICAgICBib3gtc2hhZG93OiBub25lOwogICAgICAgICAgICBib3JkZXI6IG5vbmU7CiAgICAgICAgICAgIHBhZGRpbmc6IDZweCAxMnB4OwogICAgICAgICAgICBjb2xvcjogIzI2MjYyNjsKICAgICAgICB9CiAgICAgICAgLnBlcm1hbmVudC10b29sdGlwOmJlZm9yZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IG5vbmU7CiAgICAgICAgfQogICAgICAgIC5kZy1wb3B1cF9oaWRkZW5fdHJ1ZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrOwogICAgICAgIH0KICAgICAgICAubGVhZmxldC1jb250YWluZXIgLmxlYWZsZXQtcG9wdXAgLmxlYWZsZXQtcG9wdXAtY2xvc2UtYnV0dG9uIHsKICAgICAgICAgICAgdG9wOiAwOwogICAgICAgICAgICByaWdodDogMDsKICAgICAgICAgICAgd2lkdGg6IDIwcHg7CiAgICAgICAgICAgIGhlaWdodDogMjBweDsKICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4OwogICAgICAgICAgICBsaW5lLWhlaWdodDogMTsKICAgICAgICB9CiAgICA8L3N0eWxlPjxkaXYgaWQ9Im1hcCI+PC9kaXY+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iaHR0cHM6Ly9tYXBzLmFwaS4yZ2lzLnJ1LzIuMC9sb2FkZXIuanM/cGtnPWZ1bGwmYW1wO3NraW49bGlnaHQiPjwvc2NyaXB0PjxzY3JpcHQ+KGZ1bmN0aW9uKGUpe3ZhciB0PUpTT04ucGFyc2UoZSkscj10Lm9yZGVyZWRHZW9tZXRyaWVzLG49dC5tYXBQb3NpdGlvbixhPXQuaXNXaGVlbFpvb21FbmFibGVkO2Z1bmN0aW9uIG8oZSl7cmV0dXJuIGRlY29kZVVSSUNvbXBvbmVudChhdG9iKGUpLnNwbGl0KCIiKS5tYXAoZnVuY3Rpb24oZSl7cmV0dXJuIiUiKygiMDAiK2UuY2hhckNvZGVBdCgwKS50b1N0cmluZygxNikpLnNsaWNlKC0yKX0pLmpvaW4oIiIpKX1ERy50aGVuKGZ1bmN0aW9uKCl7dmFyIGU9REcubWFwKCJtYXAiLHtjZW50ZXI6W24ubGF0LG4ubG9uXSx6b29tOm4uem9vbSxzY3JvbGxXaGVlbFpvb206YSx6b29tQ29udHJvbDohYX0pO0RHLmdlb0pTT04ocix7c3R5bGU6ZnVuY3Rpb24oZSl7dmFyIHQscixuLGEsbztyZXR1cm57ZmlsbENvbG9yOm51bGw9PT0odD1lKXx8dm9pZCAwPT09dD92b2lkIDA6dC5wcm9wZXJ0aWVzLmZpbGxDb2xvcixmaWxsT3BhY2l0eTpudWxsPT09KHI9ZSl8fHZvaWQgMD09PXI/dm9pZCAwOnIucHJvcGVydGllcy5maWxsT3BhY2l0eSxjb2xvcjpudWxsPT09KG49ZSl8fHZvaWQgMD09PW4/dm9pZCAwOm4ucHJvcGVydGllcy5zdHJva2VDb2xvcix3ZWlnaHQ6bnVsbD09PShhPWUpfHx2b2lkIDA9PT1hP3ZvaWQgMDphLnByb3BlcnRpZXMuc3Ryb2tlV2lkdGgsb3BhY2l0eTpudWxsPT09KG89ZSl8fHZvaWQgMD09PW8/dm9pZCAwOm8ucHJvcGVydGllcy5zdHJva2VPcGFjaXR5fX0scG9pbnRUb0xheWVyOmZ1bmN0aW9uKGUsdCl7cmV0dXJuInJhZGl1cyJpbiBlLnByb3BlcnRpZXM/REcuY2lyY2xlKHQsZS5wcm9wZXJ0aWVzLnJhZGl1cyk6REcubWFya2VyKHQse2ljb246ZnVuY3Rpb24oZSl7cmV0dXJuIERHLmRpdkljb24oe2h0bWw6IjxkaXYgY2xhc3M9J2J1bGxldC1tYXJrZXInIHN0eWxlPSdib3JkZXItY29sb3I6ICIrZSsiOyc+PC9kaXY+IixjbGFzc05hbWU6Im92ZXJyaWRlLWRlZmF1bHQiLGljb25TaXplOlsyMCwyMF0saWNvbkFuY2hvcjpbMTAsMTBdfSl9KGUucHJvcGVydGllcy5jb2xvcil9KX0sb25FYWNoRmVhdHVyZTpmdW5jdGlvbihlLHQpe2UucHJvcGVydGllcy5kZXNjcmlwdGlvbiYmdC5iaW5kUG9wdXAobyhlLnByb3BlcnRpZXMuZGVzY3JpcHRpb24pLHtjbG9zZUJ1dHRvbjohMCxjbG9zZU9uRXNjYXBlS2V5OiEwfSksZS5wcm9wZXJ0aWVzLnRpdGxlJiZ0LmJpbmRUb29sdGlwKG8oZS5wcm9wZXJ0aWVzLnRpdGxlKSx7cGVybWFuZW50OiEwLG9wYWNpdHk6MSxjbGFzc05hbWU6InBlcm1hbmVudC10b29sdGlwIn0pfX0pLmFkZFRvKGUpfSl9KSgneyJvcmRlcmVkR2VvbWV0cmllcyI6W3sidHlwZSI6IkZlYXR1cmUiLCJwcm9wZXJ0aWVzIjp7ImRlc2NyaXB0aW9uIjoiUEhBKzBKdlF2dEM2MExEUmh0QzQwTGdnMFlUUXZ0R0MwTDdSZ2RDMTBZSFJnZEM0MExnOEwzQSsiLCJzdHJva2VDb2xvciI6IiM0ZGI3MjUiLCJzdHJva2VXaWR0aCI6Miwic3Ryb2tlT3BhY2l0eSI6MSwiZmlsbENvbG9yIjoiIzY1ZDYzOSIsImZpbGxPcGFjaXR5IjowLjUsInJhZGl1cyI6MTMwNy4wNzA1ODY3MzI1MjcsInpJbmRleCI6MX0sImdlb21ldHJ5Ijp7InR5cGUiOiJQb2ludCIsImNvb3JkaW5hdGVzIjpbODQuOTUyMTI2LDU2LjQ1OTI2Nl19LCJpZCI6MTYxOH0seyJ0eXBlIjoiRmVhdHVyZSIsInByb3BlcnRpZXMiOnsiZGVzY3JpcHRpb24iOiIiLCJzdHJva2VDb2xvciI6IiNiNzI1MzQiLCJzdHJva2VXaWR0aCI6Miwic3Ryb2tlT3BhY2l0eSI6MSwiekluZGV4IjoyfSwiZ2VvbWV0cnkiOnsidHlwZSI6IkxpbmVTdHJpbmciLCJjb29yZGluYXRlcyI6W1s4NC45NTAwNjYsNTYuNDc3NzU3XSxbODQuOTUxNzgyLDU2LjQ1OTkzXSxbODQuOTc1ODE1LDU2LjQ1NTM3N10sWzg0Ljk3ODU2MSw1Ni40NTI1MzFdLFs4NC45Nzg1NjEsNTYuNDQ5Njg1XSxbODQuOTc5NTkxLDU2LjQ0NjkzNF0sWzg0Ljk4NDA1NSw1Ni40NDMzOTldLFs4NC45ODY0NTgsNTYuNDQwNzE4XSxbODQuOTkwMDYzLDU2LjQzODYzMV0sWzg0Ljk5NDM1NCw1Ni40MzQ2NDVdLFs4NC45OTcxMDEsNTYuNDMyNTU3XSxbODQuOTk4MTMxLDU2LjQzMTIyOF0sWzg0Ljk5ODEzMSw1Ni40MjkzMjldLFs4NC45OTgxMzEsNTYuNDI2NzY2XSxbODQuOTk0MzU0LDU2LjQyNDI5OF0sWzg0Ljk4NDM5OCw1Ni40MjA0MDZdLFs4NC45ODA3OTMsNTYuNDE1ODQ4XSxbODQuOTgyODUzLDU2LjQxMjgwOV0sWzg0Ljk4MTEzNiw1Ni40MTExOTVdXX0sImlkIjoxODk3fSx7InR5cGUiOiJGZWF0dXJlIiwicHJvcGVydGllcyI6eyJ0aXRsZSI6IjBKZlFrTkNUMEtFPSIsImRlc2NyaXB0aW9uIjoiIiwiY29sb3IiOiIjMDI4MWYyIiwiekluZGV4IjoxMDAwMDAwMDAwfSwiZ2VvbWV0cnkiOnsidHlwZSI6IlBvaW50IiwiY29vcmRpbmF0ZXMiOls4NC45NTAyMjcsNTYuNDc3Nzg4XX0sImlkIjoxMjY2fSx7InR5cGUiOiJGZWF0dXJlIiwicHJvcGVydGllcyI6eyJjb2xvciI6IiMwMjgxZjIiLCJ0aXRsZSI6IjBKclF0ZEMwMFlBPSIsImRlc2NyaXB0aW9uIjoiIiwiekluZGV4IjoxMDAwMDAwMDAwfSwiZ2VvbWV0cnkiOnsidHlwZSI6IlBvaW50IiwiY29vcmRpbmF0ZXMiOls4NC45ODE1MjYsNTYuNDExMTM5XX0sImlkIjoxNjk1fV0sIm1hcFBvc2l0aW9uIjp7ImxhdCI6NTYuNDQ1NTEwMzM3MjYwMDk2LCJsb24iOjg0Ljk4MzE5NjI1ODU0NDkyLCJ6b29tIjoxM30sImlzV2hlZWxab29tRW5hYmxlZCI6dHJ1ZX0nKTwvc2NyaXB0PjxzY3JpcHQgYXN5bmM9IiIgdHlwZT0idGV4dC9qYXZhc2NyaXB0IiBzcmM9Imh0dHBzOi8vd3d3Lmdvb2dsZXRhZ21hbmFnZXIuY29tL2d0YWcvanM/aWQ9VUEtMTU4ODY2MTY4LTEiPjwvc2NyaXB0PjxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij4oZnVuY3Rpb24oZSl7ZnVuY3Rpb24gdCgpe2RhdGFMYXllci5wdXNoKGFyZ3VtZW50cyl9d2luZG93LmRhdGFMYXllcj13aW5kb3cuZGF0YUxheWVyfHxbXSx0KCJqcyIsbmV3IERhdGUpLHQoImNvbmZpZyIsZSksd2luZG93Lmd0YWc9dH0pKCdVQS0xNTg4NjYxNjgtMScpPC9zY3JpcHQ+PC9ib2R5Pg==")</script>
+                <a class="link2gis" href="https://go.2gis.com/CYBtL" target="_blank" rel="noopener">https://go.2gis.com/CYBtL</a>
+                <div class="map-wrapper">
+                    <img src="img/dekor/map/1.png" class="mapMagic" id="mapMagic" alt="">
+                    <div class="forMapHint">
+                        <span id="mapHint" class="mapHint">На меня можно нажать :)</span>
+                    </div>
+                </div>
             </div>
+        </section>
+
+
+
+        <section class="forCentrContent">
+            <h2 class="titleOfBloks h2__dark" id="day2">День 2</h2>
+            <div class="containerOfDayPlan">
+                <div class="dayPlan foto_wedding">
+                    <img src="img/dekor/shashlik.png" class='dekorRings' alt="шашлык">
+                    <img src="img/dayPlan/KedrZmk.jpg" alt="бракосочетание">
+                </div>
+                <div class="dayPlan dayPlanForText">
+                   <p>Второй день мы проведём в тёплой атмосфере на базе отдыха <a href="https://kedrzaimka.tilda.ws" target="_blank" rel="noopener">"Кедровая заимка"</a>. <br>
+                   Будут шашлыки, плов, баня, катамараны и тёплые беседы 💙</p>
+                   
+                </div>
+        </section>
         <section class="forCentrContent">
             <h2 class="titleOfBloks h2__dark" id="Countdown">Обратный отсчёт</h2>
             <div class="countdown">
                 <div class="calendar">
-                    <div class="countdown-item day_hour_calendar">
+                    <div class="countdown-item day_hour_calendar reveal-container" id="daysCell">
+                        <img class="bucket" src="img/dekor/bucket.png">
                         <span class="count_day_hour" id="days">00</span>
                         <span class="label day_hour">Дней</span>
                     </div>
-                    <div class="countdown-item day_hour_calendar">
+                    
+                    <div class="countdown-item day_hour_calendar reveal-container" id="hoursCell">
+                        <img class="butonerka" src="img/dekor/butonerka.png"> 
                         <span class="count_day_hour" id="hours">00</span>
                         <span class="label day_hour">Часов</span>
+                        
                     </div>
                 </div>
                 <div class="clock">
+                    <img src="img/calendar/hand.png" class='left-hand-heart' id='left-hand-heart' alt="">
+                    <img src="img/calendar/hand-right.png" class='right-hand-heart' id='right-hand-heart' alt="">
                     <div class="countdown-item">
                         <span class="count_min_sec" id="minutes">00</span>
                         <span class="label min_sec">Минут</span>
@@ -89,77 +151,435 @@
                 
             </div>
         </section>
-        <section class="forCentrContent">
-            <h2 class="titleOfBloks h2__dark" id="waitYou">Ждём вас</h2>
-        </section>
-        <footer>
-            <div class="container"></div>
-    
-        </footer>
-    
     </div>  
-    <img src="img/00.jpg"><img src="img/00.jpg"><img src="img/00.jpg">
-    <div class="conteinerForSlider">
-        <div class="wrapper">
-            <div class="slide">
-                <div class="card" style="background: url(img/backdropsForSlider/1.webp);">
-                    <div class="content">
-                        <div class="title">Title 1</div>
-                        <div class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, consequuntur!</div>
-                        <button>Подробнее</button>
+    <div class="forCentrContent">
+        <h2 class="titleOfBloks h2__dark" id="LittleUs"> Щепотка нас </h2>
+        <div class="conteinerForSlider">
+            <div class="wrapper">
+                <div class="slide">
+                    <div class="card" style="background: url(img/backdropsForSlider/1.jpg); background-position: -30px -100px;">
+                        <div class="content">
+                            <div class="title">Это мы</div>
+                            <div class="desc"> Вот такой вот слайдер. Коля постарался :) <br><br> Е з д и е м </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="background: url(img/backdropsForSlider/2.jpg);">
-                    <div class="content">
-                        <div class="title">Title 2</div>
-                        <div class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, consequuntur!</div>
-                        <button>Подробнее</button>
+                    <div class="card" style="background: url(img/backdropsForSlider/2/2.JPG);">
+                        <div class="content">
+                            <div class="title">2020 Первая совместная поездка</div>
+                            <div class="desc">Вероника с Валиховыми разрабатывала витаминные коктейли на основе пептина и сыворотки. Были приглашены в Москву на конкурс. Коля влетел на вокантное место в команду — прицеп поглядел Москву и порадовался успехам ребят </div>
+                            <a href="https://www.instagram.com/p/B6sMEcgoC2O/" target="_blank" rel="noopener noreferrer">
+                                <button>Кнопка</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="background: url(img/backdropsForSlider/3.webp);">
-                    <div class="content">
-                        <div class="title">Title 3</div>
-                        <div class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, consequuntur!</div>
-                        <button>Подробнее</button>
+                    <div class="card" style="background: url(img/backdropsForSlider/3/3.jpg);">
+                        <div class="content">
+                            <div class="title">2022 В Хакасии</div>
+                            <div class="desc">Горы, природа, красота</div>
+                            <a href="https://www.instagram.com/p/Cdau-WLuNAJ/" target="_blank" rel="noopener noreferrer">
+                                <button>Кнопка</button>
+                            </a>
+                            
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="background: url(img/backdropsForSlider/4.webp);">
-                    <div class="content">
-                        <div class="title">Title 4</div>
-                        <div class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, consequuntur!</div>
-                        <button>Подробнее</button>
+                    <div class="card" style="background: url(img/backdropsForSlider/4/4.jpg);">
+                        <div class="content">
+                            <div class="title">2022 В Алма-Ате</div>
+                            <div class="desc">В рамках научного симпозиума по редким землям гуляли по красивому городу. Затем посетили Караганду</div>
+                            <a href="https://vk.com/nkakhidze?w=wall89612802_8110" target="_blank" rel="noopener noreferrer">
+                                <button>Кнопка</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="background: url(img/backdropsForSlider/5.jpg);">
-                    <div class="content">
-                        <div class="title">Title 5</div>
-                        <div class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, consequuntur!</div>
-                        <button>Подробнее</button>
+                    <div class="card" style="background: url(img/backdropsForSlider/5/5.jpg);">
+                        <div class="content">
+                            <div class="title">2023 в Батуми</div>
+                            <div class="desc">Хинкали, шашлыки, хачапури, виноград. Горы, море, грузинское гостеприимство</div>
+                            <a href="https://www.instagram.com/p/CxR9du7tqjK/" target="_blank" rel="noopener noreferrer">
+                                <button>Кнопка</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="background: url(img/backdropsForSlider/6.jpg);">
-                    <div class="content">
-                        <div class="title">Title 6</div>
-                        <div class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, consequuntur!</div>
-                        <button>Подробнее</button>
+                    <div class="card" style="background: url(img/backdropsForSlider/6/6.jpg);">
+                        <div class="content">
+                            <div class="title">2024 Пхукет</div>
+                            <div class="desc">Море, солнце, пальмы, манго, креветки. Ночёвка на острове, путешествие 5 км в гору в отельных тапочках до смотровой площадки</div>
+                            <a href="https://www.instagram.com/p/C3e6TD0PpGS/" target="_blank" rel="noopener noreferrer">
+                                <button>Кнопка</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="background: url(img/backdropsForSlider/7.jpg);">
-                    <div class="content">
-                        <div class="title">Title 7</div>
-                        <div class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, consequuntur!</div>
-                        <button>Подробнее</button>
+                    <div class="card" style="background: url(img/backdropsForSlider/7/IMG_8938.JPG);">
+                        <div class="content">
+                            <div class="title">2025 Шерегеш</div>
+                            <div class="desc">Снег, сноуборд и горы </div>
+                            <a href="https://www.instagram.com/p/DGadzkjtCjh/" target="_blank" rel="noopener noreferrer">
+                                <button>Кнопка</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="btns">
-                    <button class="prev"><i class="fas fa-arrow-left">←</i></button>
-                    <button class="next"><i class="fas fa-arrow-right">→</i></button>
+                    <div class="btns">
+                        <button class="prev"><i class="fas fa-arrow-left">←</i></button>
+                        <button class="next"><i class="fas fa-arrow-right">→</i></button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="scripts/scriptTimer.js"></script>  
+    <section class="forCentrContent">
+        <h2 class="titleOfBloks h2__dark" id="waitYou">Ждём вас</h2>
+        <!-- Блок гостей -->
+        <div class="guest-grid">
+            <!-- Кудинов -->
+            <div class="guest" data-ids="938559058">
+                <img src="img/wait You/Kudinov/1.3Ivan.jpg" alt="Кудинов Иван и Анютка">
+                <p>Иван Кудинов (с первого класса учились вместе с Колей, но разговаривать решили только в 9-ом) и <br>Анютка (ждём знакомства ❤️). </p>
+                <!-- Скрытый оверлей, который показывается при hover -->
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Kudinov/1Ivan.jpg" alt="фото, где мы с Иваном ремонтировали общежития. Какой ценой? Ценой всего">
+                        <p class="wish"></p> 
+                    </div>                  
+                </div>
+            </div>         
+            <!-- Галия -->
+            <div class="guest" data-ids="864172873,Slava">
+                <img src="img/wait You/Galiya/1.jpg" alt="Галия Латыпова и Слава Тен">
+                <p>Галия Латыпова и Слава Тен. Галия открыла нам город Лавматы, в который хочется вернуться снова 🖤(Слава, ждем встречи ☺️)</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Galiya/2.jpg" alt="Галия Латыпова и Слава Тен">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Покидаева -->
+            <div class="guest" data-ids="1437970463">
+                <img src="img/wait You/Pokidaeva/Lyuba.jpg" alt="Любовь Покидаева">
+                <p>Люба Покидаева с Колей водили своих мам к одному педиатру с 0 лет; там их и познакомили</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Pokidaeva/Lyuba2.jpg" alt="Любовь Покидаева">
+                        <p class="wish"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Катя Козубова -->
+            <div class="guest" data-ids="5577566360">
+                <img src="img/wait You/Kozubova/1.jpg" alt="">
+                <p>Катя Козубова. После всех встреч с Катей сахара было много, но сейчас Катя живет в Боливии и с ней даже чай не попить 🍭</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Kozubova/2.2.jpg" alt="Гость 2">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Динара Сланова -->
+            <div class="guest" data-ids="2Sologubovi">
+                <img src="img/wait You/Dinara/1.jpg" alt="Динара Сланова">
+                <p>Динара Сланова. Вероника по приколу ходила сдавать вступительные экзамены с Динарой, чтобы поддержать, а сама испытывала дикий стресс 🥰</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Dinara/2.jpg" alt="Динара Сланова">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Сологубовы -->
+            <div class="guest" data-ids="729797319,685402031">
+                <img src="img/wait You/Sologubovi/2Sologubovi.jpg" alt="Гость 2">
+                <p>Рома и Оля Сологубовы. Мастерски строят анимированные модели и дома в Белокурихе. <br> Открыли для молодожёнов конные прогулки в горах :)</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Sologubovi/2.2Sologubovi.jpg" alt="Гость 2">
+                        <p class="wish"></p>
+                    </div>                    
+                </div>
+            </div>
+            <!-- Яна Федотовская -->
+            <div class="guest" data-ids="525228148">
+                <img src="img/wait You/Fedotovskaya/1.jpg" alt="Яна Федотовская">
+                <p>Яна Федотовская. Всё, что было в 816, остаётся в 816⚠️ </p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Fedotovskaya/2.jpg" alt="Яна Федотовская">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Таня Буренкова и Влад Кугис -->
+            <div class="guest" data-ids="536462282,Kugis">
+                <img src="img/wait You/Burenkova/1.jpg" alt="Таня и Влад Кугис">
+                <p>Таня и Влад Кугис — удивительная пара, покоряющая своими голосами, но мы их не слышали (с вас песня 🎵). с Таней Вероника училась в 0 классе, а дружба до сих пор</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Burenkova/2.jpg" alt="Таня и Влад Кугис">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Кристина Смолякова и Саша Леонов -->
+            <div class="guest" data-ids="800261847,861222351">
+                <img src="img/wait You/KristinaSasha/1.jpg" alt="Кристина Смолякова и Саша Леонов">
+                <p>Кристина Смолякова и Саша Леонов. С ребятами и дико потусить (в Сидрерию 🍼🍼🍼 ), и яблоки поесть 🕺</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/KristinaSasha/2.jpg" alt="Кристина Смолякова и Саша Леонов">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Таня Тюпкина и Рома Воронцов -->
+            <div class="guest" data-ids="1012351554,423866136">
+                <img src="img/wait You/TaniaRoma/1.jpg" alt="Таня Тюпкина и Рома Воронцов">
+                <p>Рома Воронцов и Таня Тюпкина. Жестко ждут Яблочный спас 🍎</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/TaniaRoma/2.jpg" alt="Таня Тюпкина и Рома Воронцов">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Яся и Костя Замараевы -->
+            <div class="guest" data-ids="739414477,6200023355">
+                <img src="img/wait You/Zamaraevi/1.1.jpg" alt="Яся и Костя Замараевы">
+                <p>Костя и Яся Замараевы. С этими ребятками и тамады не нужно: в гости да на шашлыки и в баньку 💚</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Zamaraevi/5244817430138696387.jpg" alt="Яся и Костя Замараевы">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Влад Бажанов -->
+            <div class="guest" data-ids="144463213">
+                <img src="img/wait You/Vlad/1.jpg" alt="Влад Бажанов">
+                <p>Влад Бажанов. Сила его мысли сделала Колю программистом. Влад: "Вы не сеньеры, потому что так думаете" 😎</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Vlad/2.1.jpg" alt="Влад Бажанов">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Вова и Маша Платовы -->
+            <div class="guest" data-ids="1945909612,552569218">
+                <img src="img/wait You/Platov/1.jpg" alt="Вова и Маша Платовы">
+                <p>Вова и Маша Платовы. Владимир — человек огромной технической мысли, в ТГУ запускает сложнейшие установки и чинит те, с которыми мы нарукожопили. Мария работает в самом лучшем банке Росбанк, который нагрел Колю на 5.5 тысяч на ровном месте :) </p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Platov/2.jpg" alt="Вова и Маша Платовы">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Вова и Лариса Валиховы-->
+            <div class="guest" data-ids="1202048708,5243479699">
+                <img src="img/wait You/Valikhovs/1.jpg" alt="Вова и Лариса Валиховы">
+                <p>Вова и Лариса Валиховы. Благодаря Вове с Колей металлы блестят с 2016 года, а благодаря Ларисе с Вероникой блястят сами парни 😇 </p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Valikhovs/2.1.jpg" alt="Вова и Лариса Валиховы">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Рауль Мубараков и Даша Торопанова -->
+            <div class="guest" data-ids="1701218534,1060764388">
+                <img src="img/wait You/Mubarakovs/1.jpg" alt="Рауль Мубараков и Даша Торопанова">
+                <p>Рауль Мубараков и Даша Торопанова. Коля с Раулем умеют сверлить сааамые последние отверстия в ремонте — то провод перебьют, то полстены отвалится. Даша — покорительница бюгельных подъёмников :)</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Mubarakovs/2.jpg" alt="Рауль Мубараков и Даша Торопанова">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Янис и Наташа Верхошанские -->
+            <div class="guest" data-ids="1562372375,1473160454">
+                <img src="img/wait You/Verkhoshanskie/1.png" alt="Янис и Наташа Верхошанские">
+                <p>Янис и Наташа Верхошанские. Наташа больше не учитель в школе — ух берегитесь совместные отпуска 😈😈😈 </p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Verkhoshanskie/2.jpg" alt="Янис и Наташа Верхошанские">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Сергей Биттер -->
+            <div class="guest" data-ids="2044283592">
+                <img src="img/wait You/Bitter/1.jpg" alt="Сергей Биттер">
+                <p>Сергей Биттер — надёжнейший человек и друг. Подкинет классную подработку и ЖБ ставочку. Влетает без раздумий на помощь, когда полная задница с ремонтом общежития и заливкой стяжки — намертво перекрывает воду в стояке 💪 </p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Bitter/2.jpg" alt="Сергей Биттер">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Настя Ахмадиева -->
+            <div class="guest" data-ids="620767401">
+                <img src="img/wait You/Akhmadieva/1.jpg" alt="Настя Ахмадиева">
+                <p>Настя Ахмадиева — человек сочетающий в себе удивительно полярные увлечения: страсть к фундаментальной науке, пластика в устоявшихся теориях и умение двигать парадигмы 🔬🔥 </p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Akhmadieva/2.2.jpg" alt="Настя Ахмадиева">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Ирина Синкина -->
+            <div class="guest" data-ids="1214063043">
+                <img src="img/wait You/Sinkina/1.jpg" alt="Ирина Синкина">
+                <p>Ира Синкина — массовик-затейник. Что она делает, когда не хватает времени из-за общественной нагрузки? Смотрит сериалы на скорости x2</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Sinkina/2.jpg" alt="Ирина Синкина">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Вика Мирошкина -->
+            <div class="guest" data-ids="929493014">
+                <img src="img/wait You/Miroshkina/1.1.jpg" alt="Вика Мирошкина">
+                <p>Вика Мирошкина. Когда все выкатились колобком из безлимитного кафе в Тайланде, что сделала Вика через час? Достала бутерброд</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Miroshkina/2.jpg" alt="Вика Мирошкина">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Сергей Соколов -->
+            <div class="guest" data-ids="45949875">
+                <img src="img/wait You/Sokolov/1.jpg" alt="Сергей Соколов">
+                <p>Сергей Соколов. Повелитель высоких инергий из порошков. Кто знает, куда летают его Al-Mg 50:50 🚀</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Sokolov/2.1.jpg" alt="Сергей Соколов">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Миша Селиховкин -->
+            <div class="guest" data-ids="484832874">
+                <img src="img/wait You/Selikhovkin/1.jpg" alt="Миша Селиховкин">
+                <p>Миша Селиховкин — любитель естественных пузыриков в шампанском и бодрящей зарядки на весь хостел 🔋</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Selikhovkin/2.jpg" alt="Миша Селиховкин">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Наташа Новикова -->
+            <div class="guest" data-ids="Novikova">
+                <img src="img/wait You/Natasha/1.jpg" alt="Наташа Новикова">
+                <p>Наташа Новикова. Хрупкая девочка-айтишница. Вся в компьютере. Покоряла горы свыше 4000 м, заблудилась зимой в Белокурихе. За плечами опыт прыжка с парашютом 👧</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Natasha/2.jpg" alt="Наташа Новикова">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Саша Тимофеев и Юля Кузнецова -->
+            <div class="guest" data-ids="1355258645,Kuznetsova">
+                <img src="img/wait You/Timofeev/1.1.jpg" alt="Саша Тимофеев и Юля Кузнецова">
+                <p> Саша Тимофеев и Юля Кузнецова. С ребятами нефть может прям и не пампили, но поезда запускали 🛢️</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Timofeev/2.jpg" alt="Саша Тимофеев и Юля Кузнецова">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Андрей Шубин -->
+            <div class="guest" data-ids="5686293562">
+                <img src="img/wait You/Shubin/1.jpg" alt="Андрей Шубин">
+                <p>Андрей Шубин. На парах по матану его боялись даже чеченцы ➕➖➗ </p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Shubin/2.jpg" alt="Андрей Шубин">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Паша Никитин -->
+            <div class="guest" data-ids="675297607">
+                <img src="img/wait You/Nikitin/1.jpg" alt="Паша Никитин">
+                <p> Паша Никитин. Да это просто сын маминой подруги. Умный, красивый, высокий, целеустремлённый и не работает в MIT</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Nikitin/2.jpg" alt="Паша Никитин">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Аня Ветрова и Женя Иванов -->
+            <div class="guest" data-ids="">
+                <img src="img/wait You/Vetrova/1.jpg" alt="Женя Иванов и Аня Ветрова">
+                <p> Женя Иванов и Аня Ветрова. Аня выдающаяся физико-техничка, моделировала композитные кластеры с закрытыми глазами. Мы не знаем, какой Женя танцор, но он точно на движениях 🏎</p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Vetrova/2.jpg" alt="Женя Иванов и Аня Ветрова">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+            <!-- Антон Хрусталёв и Ирина -->
+            <div class="guest" data-ids="">
+                <img src="img/wait You/Khrustalev/1.jpg" alt="Антон и Ирина Хрусталёвы">
+                <p> Антон и Ирина Хрусталёвы. Антон очень добрый и весёлый человек, запирал нас с Вовой Валиховым в подвале ТГУ, чтобы мы тёрли ему куски металла до блеска 💞💞. Думаем, Ирина его в этом всячески поддерживала 💞   </p>
+                <div class="enlarged">
+                    <div class="enlargedContent">
+                        <img src="img/wait You/Khrustalev/2.jpg" alt="Антон и Ирина Хрусталёвы">
+                        <p class="wish"></p> 
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="conteinerForBot">
+            <div class="avaBot">
+                <img src="img/wait You/bot/botOnVacation.webp" alt="Гость 6">
+            </div>
+            <div class="discribeBot">
+                <p>Привет, я почтальон Kakhidze_wish_postman. У меня интересная работа: перемещаюсь по миру и передаю ваши поздравления для семьи Кахидзе 💙. Работа не пыльная, но суеты, конечно, много. В общем, буду рад доставить ваше поздравление! Сканируйте qr-код или ищите меня по <br>
+                    <b>
+                        <a href="https://t.me/Kakhidze_wish_postmanBot" target="_blank" rel="noopener">
+                        @Kakhidze_wish_postman_bot
+                        </a>
+                    </b><br>
+                </p>
+                <img src="img/wait You/bot/qr.jpg" alt="Гость 6">
+
+            </div>
+
+        </div>
+  
+    </section>
+    <footer>
+        <div class="container"></div>
+        <h2 class="titleOfBloks h2__dark">Ждём вас ❤️</h2>
+
+    </footer>
+    <script src="scripts/scriptMenu.js"></script> 
+    <script src="scripts/mapMagic.js"></script> 
+    <script src="scripts/scriptTimer.js"></script> 
+    <script src="scripts/scriptHours.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="scripts/scriptConfetti.js"></script>
+    
+    
     <script src="scripts/scriptSlider.js"></script>
+    
+    <script src="scripts/scriptShuffleGuests.js"></script>
+   
+    <script src="scripts/scriptWisherBot.js"></script>
+    
     
     
     
