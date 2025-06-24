@@ -1,23 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-.montserrat-alternates-black {
-    font-family: "Montserrat Alternates", serif;
-    font-weight: 900;
-    font-style: normal;
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ */
+ @font-face {
+    font-weight: 400; /* Соответствует значению normal */
+    font-family: 'Montserrat Alternates';
+    src: url("../fonts/Montserrat_Alternates/MontserratAlternates-MediumItalic.ttf");
+  }
+  
+@font-face {
+    font-weight: 700; /* Соответствует значению bold */
+    font-family: 'Montserrat Alternates';
+    src: url("../fonts/Montserrat_Alternates/MontserratAlternates-BoldItalic.ttf");
+  }
+  
+@font-face {
+    font-weight: 300;
+    font-family: 'Montserrat Alternates';
+    src: url("../fonts/Montserrat_Alternates/MontserratAlternates-LightItalic.ttf");
   }
 
-.conteinerForSlider {
-    width: 1000px;
-    height: 1000px;
-    overflow: hidden;
 
+@media (min-width: 1315px)  {
+    .conteinerForSlider {
+        width: 100%;
+        max-width: 1300px;
+        height: 1000px;
+        margin-top: -100px;
+
+    }
+    .wrapper {
+        width: 1200px;
+        height: 800px;
+        
+    }
 }
+
+@media (max-width: 1314px) and (min-width: 769px)  {
+    .conteinerForSlider {
+        width: 100%;
+        max-width: 1300px;
+        height: 800px;
+        margin-top: -50px;
+    }
+    .wrapper {
+        width: 900px;
+        height: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .conteinerForSlider {
+        width: 100%;
+        max-width: 1300px;
+        height: 800px;
+        overflow: hidden;
+        margin-top: -55px;
+    }
+    .wrapper {
+        width: 600px;
+        height: 700px;
+        
+    }    
+}
+
+
 
 .wrapper {
     position: relative;
-    width: 1000px;
-    height: 600px;
-    background: #f5f5f5;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -25,51 +73,21 @@
     font-family: "Montserrat Alternates", sans-serif;
 }
 
+  
+
 .wrapper .slide .card {
     width: 200px;
     height: 300px;
+    
     display: inline-block;
-    position: relative;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     box-shadow: 0 30px 50px #505050;
     border-radius: 20px;
-    background-size: cover;
+
     background-position: center;
     transition: .5s;
-}
-
-.wrapper .slide .card:nth-child(1) {
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-}
-
-.slide .card:nth-child(2) {
-    left: 50%;
-}
-
-.slide .card:nth-child(3) {
-    left: calc(50% + 220px);
-}
-
-.slide .card:nth-child(4) {
-    left: calc(50% + 440px);
-}
-
-.slide .card:nth-child(5) {
-    left: calc(50% + 660px);
-}
-
-.slide .card:nth-child(6) {
-    left: calc(50% + 880px);
-}
-
-.slide .card:nth-child(7) {
-    left: calc(50% + 1100px);
 }
 
 .slide .card .content {
@@ -83,10 +101,6 @@
     display: none;
 }
 
-.slide .card:nth-child(1) .content {
-    display: block;
-}
-
 .card .content .title {
     font-size: 40px;
     font-weight: 600; 
@@ -97,13 +111,19 @@
 .card .content .desc {
     margin-top: 10px;
     margin-bottom: 20px;
+    text-shadow: 
+    -1px -1px 0 #000,  /* верх-лево */
+    1px -1px 0 #000,   /* верх-право */
+    -1px 1px 0 #000,   /* низ-лево */
+    1px 1px 0 #000; 
     opacity: 0;
     animation: anim 1s ease-in-out 0.3s 1 forwards;
 } 
 
 .card .content button {
     padding: 10px 20px;
-    background: var();
+    background: #fff;
+    opacity: 0.7;
     border-radius: 8px;
     border: none;
     cursor: pointer;
@@ -132,6 +152,7 @@
     width: 100%;
     bottom: 20px;
     text-align: center;
+    z-index: 10;
 }
 
 .btns button {
@@ -142,9 +163,43 @@
     border: solid 1px #000;
     cursor: pointer;
     transition: 0.3s;
+    background-color: #fff;
+    opacity: 0.8;
 }
 
 .btns button:hover {
     background-color: #000;
     color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .card .content .title {
+        top: -150px;
+         text-shadow: 
+            -1px -1px 0 #000,  /* верх-лево */
+            1px -1px 0 #000,   /* верх-право */
+            -1px 1px 0 #000,   /* низ-лево */
+            1px 1px 0 #000; 
+        width: 300px;
+    }
+
+    .card .content .desc {
+        width: 220px;
+    }
+
+    .slide .card .content {
+        top: 250px;
+        height: 300px;
+        width: 300px;
+        left: 130px;
+    }
+
+    .wrapper .btns {
+        bottom: 139px;
+    }
+    .btns button {
+    width: 54px;
+    height: 31px;}
+
 }
