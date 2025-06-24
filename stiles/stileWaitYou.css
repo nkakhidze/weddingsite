@@ -1,0 +1,189 @@
+@font-face {
+  font-weight: 400; /* Соответствует значению normal */
+  font-family: 'Montserrat Alternates';
+  src: url("../fonts/Montserrat_Alternates/MontserratAlternates-MediumItalic.ttf");
+}
+
+/* Контейнер с гостями – грид-сетка */
+.guest-grid {
+    display: grid;
+    grid-gap: 40px;
+    margin: 0px 20px;
+    font-family: 'Montserrat Alternates', Courier, monospace;
+    text-align: center;
+  }
+
+  /* Адаптивная сетка */
+  @media (max-width: 768px) {
+    .guest-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 660px;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1314px) {
+    .guest-grid {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 900px;
+    }
+  }
+  
+  @media (min-width: 1315px) {
+    .guest-grid {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1600px;
+    }
+  }
+  
+  /* Стили для каждого гостевого блока */
+  .guest {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .guest img {
+    width: 100%;
+    display: block;
+    transition: transform 0.8s;
+  }
+  
+  /* Небольшое увеличение при наведении */
+  .guest:hover img {
+    transform: scale(1.2);
+  }
+  
+
+  
+/* Скрытый оверлей, покрывающий весь экран */
+.guest .enlarged {
+  opacity: 0;
+  pointer-events: none; /* чтобы блок не перехватывал события мыши, когда скрыт */
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none; /* Отключаем перехват событий мыши */
+  position: fixed;           /* Фиксирован относительно окна */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Затемняющий фон */
+  z-index: 1000;  
+  display: flex;             /* Поверх всего остального */
+  align-items: center;       /* Центрирование содержимого по вертикали (flex) */
+  justify-content: center;   /* Центрирование содержимого по горизонтали */
+}
+
+
+
+
+  /* Изображение в оверлее */
+  .guest .enlarged img {
+    max-width: 60%;
+    max-height: 80%;
+    object-fit: contain;
+
+  }
+
+
+  /* Текст пожелания – выводится через псевдоэлемент */
+  /* .guest .enlarged .wish::before {
+    content: attr(data-wish);
+    color: #fff;
+    font-size: 18px;
+    display: block;
+  } */
+
+  .enlarged .enlargedContent .wish {
+    color: #fff;
+    font-size: 18px;
+  }
+
+.enlarged .enlargedContent .wish::before {
+  content: attr(data-wish);
+  display: block;
+  color: #fff;
+  font-size: 18px;
+}
+  
+ 
+  .guest:hover .enlarged {
+    opacity: 1;
+  }
+
+.guest .enlarged .enlargedContent {
+  width: 80%;
+  height: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  z-index: 2; /* Чтобы контент был "выше" фона */
+  position: relative;
+
+}
+
+.guest .enlarged .enlargedContent img {
+  max-width: 60%;
+  max-height: 80%;
+  object-fit: contain;
+  margin-bottom: 120px; /* чтобы текст не налезал на картинку */
+}
+
+.conteinerForBot {
+  display: flex;
+  padding: 5%;
+  font-family: 'Montserrat Alternates', Courier, monospace;
+  line-height: 26px;
+}
+
+.avaBot {margin-right: 50px;}
+.discribeBot p {margin-bottom: 25px;}
+
+@media (max-width: 768px) {
+  .avaBot {
+    max-width: 250px;
+    margin-bottom: 15px;
+    margin-top: 110px;
+    margin-right: 0
+  }
+  .discribeBot {
+    max-width: 300px;
+  }
+
+  .conteinerForBot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    font-family: 'Montserrat Alternates', Courier, monospace;
+    line-height: 26px;
+  }
+
+
+  .guest .enlarged .enlargedContent img {
+  max-width: 95%;
+  max-height: 70%;
+  object-fit: contain;
+  margin-bottom: 120px; /* чтобы текст не налезал на картинку */
+}
+}
+
+@media (min-width: 769px) and (max-width: 1314px) {
+  .avaBot {
+    max-width: 400px;
+  }
+  .discribeBot {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1315px) {
+  .avaBot {
+    max-width: 600px;
+  }
+  .discribeBot {
+    max-width: 500px;
+  }
+}
