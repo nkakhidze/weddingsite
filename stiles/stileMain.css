@@ -73,7 +73,7 @@
     position: absolute;
     width: 349px;
     top: 204px;
-    left: -210px;
+    left: -267px;
   }
   .startRings {
     position: absolute;
@@ -85,7 +85,7 @@
     position: absolute;
     width: 330px;
     top: 251px;
-    left: 302px;
+    left: 383px;
   }
 
   .V {
@@ -893,4 +893,5 @@ h2 {
     
 .butonerka:hover{
   rotate: 20deg
+
 }
